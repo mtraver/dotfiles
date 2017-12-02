@@ -1,0 +1,10 @@
+[alias]
+  a = add
+  b = branch -v
+  bd = branch -vD
+  co = checkout
+  logshort = log --pretty=format:\"%h %s\"
+  s = status
+  superc = !git clean -dfx && git checkout .
+[push]
+	default = simple
