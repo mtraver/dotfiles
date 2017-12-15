@@ -4,6 +4,7 @@
   bd = branch -vD
   co = checkout
   logshort = log --pretty=format:\"%h %s\"
+  rmb = !git branch | grep -v " master$" | xargs git branch -D
   s = status
   superc = !git clean -dfx && git checkout .
 [push]
