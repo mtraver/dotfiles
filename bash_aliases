@@ -96,3 +96,14 @@ diff_range() {
 
   meld <(sed -n "${r1}p" "$f1") <(sed -n "${r2}p" "$f2")
 }
+
+# Strikes through $1 by adding U+0336 (COMBINING LONG STROKE OVERLAY)
+# to each character
+strikethrough() {
+  if [ "$#" -ne 1 ]; then
+    echo "usage: strikethrough str"
+    return 2
+  fi
+
+  python3 -c "print(''.join([c + '\u0336' for c in \"$1\"]))"
+}
