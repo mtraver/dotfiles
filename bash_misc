@@ -19,12 +19,12 @@ fi
 
 # Update PATH for the Google Cloud SDK
 # See https://cloud.google.com/sdk/docs/quickstart-linux
-if [ -f '/home/mtraver/google-cloud-sdk/path.bash.inc' ]; then
-  source '/home/mtraver/google-cloud-sdk/path.bash.inc'
+if [ -f "${HOME}/google-cloud-sdk/path.bash.inc" ]; then
+  source "${HOME}/google-cloud-sdk/path.bash.inc"
 fi
 
 # Enable shell command completion for gcloud
 # See https://cloud.google.com/sdk/docs/quickstart-linux
-if [ -f '/home/mtraver/google-cloud-sdk/completion.bash.inc' ]; then
-  source '/home/mtraver/google-cloud-sdk/completion.bash.inc'
+if [ -f "${HOME}/google-cloud-sdk/completion.bash.inc" ]; then
+  source "${HOME}/google-cloud-sdk/completion.bash.inc"
 fi
