@@ -6,6 +6,8 @@
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\D{%T}\[\033[00m\] \$ '
 
+export EDITOR="vim"
+
 # See https://golang.org/doc/install?download=go1.9.2.linux-amd64.tar.gz
 if [ -d /usr/local/go ]; then
   export PATH="${PATH}:/usr/local/go/bin"
@@ -15,4 +17,14 @@ if [ -d "${HOME}/go" ]; then
   export PATH="${PATH}:${GOPATH}/bin"
 fi
 
-export EDITOR="vim"
+# Update PATH for the Google Cloud SDK
+# See https://cloud.google.com/sdk/docs/quickstart-linux
+if [ -f '/home/mtraver/google-cloud-sdk/path.bash.inc' ]; then
+  source '/home/mtraver/google-cloud-sdk/path.bash.inc'
+fi
+
+# Enable shell command completion for gcloud
+# See https://cloud.google.com/sdk/docs/quickstart-linux
+if [ -f '/home/mtraver/google-cloud-sdk/completion.bash.inc' ]; then
+  source '/home/mtraver/google-cloud-sdk/completion.bash.inc'
+fi
