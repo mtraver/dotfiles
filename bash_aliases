@@ -72,6 +72,23 @@ alias gtis="git status -u"
 
 alias gitsuperc="git clean -dfx && git checkout ."
 
+##########
+# Docker #
+##########
+
+# Blows away all docker images
+function dockerrmall() {
+  docker images | tail -n+2 | awk '{print $1":"$2}' | xargs docker rmi -f {}
+  docker images | tail -n+2 | awk '{print $3}' | xargs docker rmi -f {}
+}
+
+# Stops all running containers
+function dockerstop() {
+  docker ps -q | xargs docker stop
+}
+
+# UTC date string suitable for use as a docker image tag
+alias datetag="date -u --rfc-3339=seconds | sed -e 's/ /T/' -e 's/://g' -e 's/+0000/Z/'"
 
 ########
 # Misc #
