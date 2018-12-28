@@ -90,6 +90,13 @@ function dockerstop() {
 # UTC date string suitable for use as a docker image tag
 alias datetag="date -u --rfc-3339=seconds | sed -e 's/ /T/' -e 's/://g' -e 's/+0000/Z/'"
 
+
+#######
+# GCP #
+#######
+alias gaeversion="echo $(date +'%Y%m%dt%H%M%S')-$(git rev-parse --verify --short HEAD)"
+
+
 ########
 # Misc #
 ########
