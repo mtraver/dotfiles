@@ -94,7 +94,9 @@ alias datetag="date -u --rfc-3339=seconds | sed -e 's/ /T/' -e 's/://g' -e 's/+0
 #######
 # GCP #
 #######
-alias gaeversion="echo $(date +'%Y%m%dt%H%M%S')-$(git rev-parse --verify --short HEAD)"
+function gaeversion() {
+  echo "$(date +'%Y%m%dt%H%M%S')-$(git rev-parse --verify --short HEAD)"
+}
 
 
 ########
