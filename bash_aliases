@@ -97,6 +97,11 @@ function dockerrmall() {
   docker images | tail -n+2 | awk '{print $3}' | xargs docker rmi -f {}
 }
 
+# Blows away all docker containers
+function dockerrmallc() {
+  docker container ls -a | tail -n+2 | awk '{print $1}' | xargs docker rm
+}
+
 # Stops all running containers
 function dockerstop() {
   docker ps -q | xargs docker stop
