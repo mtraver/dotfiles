@@ -83,8 +83,8 @@ alias gitsuperc="git clean -dfx && git checkout ."
 ######
 # Go #
 ######
-alias gofmtall='find . -type f -name "*.go" -print0 | xargs --null gofmt -w'
-alias goimportsall='find . -type f -name "*.go" -print0 | xargs --null goimports -w'
+alias gofmtall='find . -type f -name "*.go" -print0 | xargs -0 gofmt -w'
+alias goimportsall='find . -type f -name "*.go" -print0 | xargs -0 goimports -w'
 
 
 ##########
